@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver KYC Update</title>
+    <link rel="stylesheet" type="text/css" href="style5.css">
+</head>
+<body>
+    <header>
+        <h1>Driver KYC Update</h1>
+        <nav>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#kyc-update">KYC Update</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="kyc-update">
+        <h2>Update Your KYC Information</h2>
+        <form action="process_kyc_update.php" method="post" onsubmit="return validateForm()">
+            <label for="driver-license">Driver's License Number:</label>
+            <input type="text" name="driver-license" id="driver-license" required>
+
+            <label for="address">Address:</label>
+            <textarea name="address" id="address" required></textarea>
+
+            <label for="id-proof">Upload ID Proof (e.g., Passport, Aadhar Card):</label>
+            <input type="file" name="id-proof" id="id-proof" accept=".pdf, .jpg, .png" required>
+
+            <input type="submit" value="Submit KYC Update">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Our Company. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const licenseNumber = document.getElementById("driver-license").value;
+            const address = document.getElementById("address").value;
+            const idProof = document.getElementById("id-proof").value;
+
+            if (licenseNumber === "" || address === "" || idProof === "") {
+                alert("Please fill in all required fields.");
+                return false;
+            }
+
+            // Additional validation logic can be added here
+
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+body {
+    background: url('images.jpg');
+    background-size: cover;
+    background-size: 1280px 3500px;
+    font-style: normal;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    align-items: start;
+}
+
+
+table {
+
+    font-style: normal;
+
+    margin: auto;
+    position: sticky;
+    top: 0px;
+    background-color: aqua;
+    border-radius: 5px;
+    float: left;
+    display: flex;
+}
+
+dd {
+    font-family: unset;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.anu {
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: blue;
+}
+
+#nunu {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    text-decoration: dotted;
+    background-color: blue;
+}
+
+.ac {
+    background-color: aquamarine;
+}
+
+::placeholder {
+    font-weight: bolder;
+}
+
+#name {
+    width: 200px;
+}
+
+#email {
+    width: 200px;
+}
+
+.as:hover {
+    color: blue;
+    background-color: aqua;
+}
+
+.as:visited {
+    color: blueviolet;
+    background-color: bisque;
+}
+
+#search {
+    width: 800px;
+    height: 35px;
+    position: sticky;
+    top: 0px;
+}
+
+.Anurag {
+    background-color: blue;
+    color: azure;
+    border-radius: 10px;
+    font-size: xx-large;
+    position: sticky;
+    top: 0px;
+}
+
+.qwe {
+    bottom: 5px;
+    right: 5px;
+    background-color: rgb(220, 220, 233);
+    border-radius: 10px;
+    position: fixed;
+}
+
+#examhall {
+    font-size: x-large;
+}
+
+.dt {
+    font-size: x-large;
+    background-color: bisque;
+    border-radius: 510px;
+}
+
+.ab {
+    background-color: bisque;
+}
+
+.a {
+    background-color: black;
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.mn {
+    background-color: white;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Our Website</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="car-choosing.html">Car Choosing</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="login-form">
+        <h2>Login to Your Account</h2>
+        <form action="abc.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Our Website. All rights reserved.</p>
+    </footer>
+    <script>
+        // Get a reference to the form element
+const loginForm = document.querySelector("#login-form");
+
+// Listen for the form's submit event
+loginForm.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  // Get the values of the username and password fields
+  const username = document.querySelector("#username").value;
+  const password = document.querySelector("#password").value;
+
+  // Check if both username and password are not empty
+  if (username.trim() !== "" && password.trim() !== "") {
+    // Create an object to store the user data
+    const userData = {
+      username: username,
+      password: password,
+    };
+
+    // Convert the user data to a JSON string
+    const userDataJSON = JSON.stringify(userData);
+
+    // Store the JSON string in localStorage
+    localStorage.setItem("userData", userDataJSON);
+
+    // Optionally, provide feedback to the user
+    alert("User data saved to localStorage!");
+
+    // You can redirect to another page or perform other actions here
+  } else {
+    // Handle empty fields or other validation logic here
+    alert("Please fill in both the username and password fields.");
+  }
+});
+
+    </script>
+    
+</body>
+</html>

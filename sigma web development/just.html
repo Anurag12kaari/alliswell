@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width , initial-scal=1.0">
+    <title>Netflix Website - Aswin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: color #000;
+            ;
+            color: #ffffff;
+        }
+
+        .header {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(netflix-img/images/header-image.png);
+            background-size: cover;
+            background-position: center;
+            padding: 10px 8%;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .logo {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        nav button {
+            border: 0;
+            outline: 0;
+            background: #db0001;
+            color: #ffffff;
+            padding: 7px 20px;
+            font-size: 12px;
+            border-radius: 20px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .language-btn {
+            height: 50px;
+            width: 150px;
+            display: block;
+            align-items: center;
+            background: transparent;
+            border: 1px solid #fff;
+            padding: 0px;
+        }
+
+        .language-btn img {
+            width: 10px;
+            margin-left: 10px;
+        }
+
+        .signin-btn {
+            display: inline-flex;
+            align-items: center;
+            background: transparent;
+            border: 1px solid #fff;
+            padding: 7px 10px;
+
+        }
+
+        .header-content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .header-content h1 {
+            font-size: 60px;
+            line-height: 70px;
+            font-weight: 600;
+            max-width: 650;
+        }
+
+        header-content h3 {
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .email-signup {
+            background: #fff;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        .email-signup input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            margin-left: 20px;
+        }
+
+        .email-signup button {
+            background: #db0001;
+            border: 0;
+            outline: 0;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 15px 30px;
+        }
+
+        /*--------------------features-------------------*/
+        .features {
+            padding: 50px 12%;
+            font-size: 22px;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px 0;
+        }
+
+        .text-col {
+            flex-basis: 50%;
+            margin-bottom: 20px;
+        }
+
+        .img-col {
+            flex-basis: 50%;
+            margin-bottom: 20px;
+        }
+
+        .img-col img {
+            display: block;
+            width: 90%;
+            margin: auto;
+        }
+
+        .faq {
+            padding: 10px 12%;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .faq h2 {
+            font-weight: 500;
+            font-size: 40;
+        }
+
+        .accordion {
+            margin: 60px auto;
+            width: 100%;
+            max-width: 750px;
+        }
+
+        .accordion li {
+            list-style: none;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .accordion li label {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            background: #ffffff;
+            margin-bottom: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        label::after {
+            content: '+';
+            font-size: 34px;
+            position: absolute;
+            right: 20px;
+            transition: transform 0.5s;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .accordion .content {
+            background: #ffffff;
+            text-align: left;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s padding 0.5s;
+        }
+
+        .accordion input[type="radio"]:checked+label+.content {
+            max-height: 600px;
+            padding: 30px 20px;
+        }
+
+        .accordion input[type="radio"]:checked+label::after {
+            transform: rotate(135deg);
+        }
+
+        .faq .email-signup {
+            max-width: 600px;
+            margin: 20px auto 60px;
+        }
+
+        .faq small {
+            font-size: 13px;
+        }
+
+        .footer {
+            padding: 50px 15% 10px;
+            border-top: 6px solid #333;
+            color: #777;
+        }
+
+        .footer h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .footer .col {
+            flex-basis: 25%;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .footer .col a {
+            display: block;
+            text-decoration: none;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer.row {
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+
+        .footer .language-btn {
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 3px;
+        }
+
+        .copyright-text {
+            font-size: 14px;
+            align-items: flex-start;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .m {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            height: 50px;
+            width: 900px;
+            background-color: gray;
+            float: left;
+            display: flex;
+            align-items: center;
+            font-size: larger;
+            transition: 1s;
+            padding: 10px;
+        }
+
+        .m:hover {
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <img src="netflix-img/images/logo.png" class="logo">
+            <div>
+                <button class="language-btn">English<img src="netflix-img/images/down-icon.png" </button>
+                    <button class="signin-btn">Sign In </button>
+            </div>
+        </nav>
+        <div class="header-content">
+            <h1>Unlimted movies,TV shows and more</h1>
+            <h3>Watch anywhere.Cancel anytime</h3>
+            <p>Ready to watch?Enter your email to create or restart your membership</p>
+            <form class="email-signup">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">Get Started</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="featuers">
+        <div class="row" style="background-color:black;">
+            <div class="text-col">
+                <h2 style="margin-left:80px;">Enjoy on your TV</h2>
+                <p style="margin-left:80px;">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
+                    players and more.</p>
+            </div>
+            <div class="img-col">
+                <img src="netflix-img/images/feature-1.png" alt="">
+            </div>
+        </div>
+        <div class="row" style="background-color:black;">
+            <div class="text-col">
+                <h2 style="margin-left:80px;">Download your shows to watch offline</h2>
+                <p style="margin-left:80px;">Save your favourites easily and always have something to watch.
+
+                </p>
+            </div>
+            <div class="img-col">
+                <img src="netflix-img/images/feature-2.png" alt="">
+            </div>
+        </div>
+        <div class="row" style="background-color:black;">
+            <div class="text-col">
+                <h2 style="margin-left:80px;">Create profiles for kids.</h2>
+                <p style="margin-left:80px;">Send children on adventures with their favourite characters in a space made
+                    just for them—free with your membership.</p>
+            </div>
+            <div class="img-col">
+                <img src="netflix-img/images/feature-4.png" alt="">
+            </div>
+        </div>
+        <div class="faq" style="background-color:black;">
+            <h2>Frequently Asked Question</h2>
+            <ul class="accordion">
+                <div class="g">
+                    <div class="b">
+                        <div style="color: aliceblue; font-size: larger; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;"
+                            class="m">What is Netflix?
+                        </div>
+                        <div style="color: aliceblue; font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"
+                            class="m">How much does Netflix cost?
+                        </div>
+                        <div style="color: aliceblue; font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"
+                            class="m">Where can I watch?
+                        </div>
+                        <div style="color: aliceblue; font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"
+                            class="m">How do I cancel?
+                        </div>
+                        <div style="color: aliceblue; font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"
+                            class="m">What can I watch on Netflix?</div>
+                        <div style="color: aliceblue; font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"
+                            class="m">Is Netflix good for kids?</div>
+                    </div>
+            </ul>
+            <small>Ready to watch?Enter your email to create or restart your membership</small>
+            <form class="email-signup">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">Get Started</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer" style="background-color:black; height: 500px;">
+        <h2>Question? call 000-000-000-000</h2>
+
+        <div class="row">
+            <div class="col">
+                <a href="#"> FAQ</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Privacy</a>
+                <a href="#">Speed Test</a>
+            </div>
+            <div class="col">
+                <a href="#"> Help Center</a>
+                <a href="#">Jobs</a>
+                <a href="#">Cookies Preferences</a>
+                <a href="#">Legal Notices</a>
+            </div>
+            <div class="col">
+                <a href="#"> Account</a>
+                <a href="#">Ways to watch</a>
+                <a href="#">Corporate Information</a>
+                <a href="#">Only on Netflix</a>
+            </div>
+            <div class="col">
+                <a href="#"> Media Centre</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+        <div class="language-btn">English<img src="netflix-img/images/down-icon.png" </div>
+            <div  style="margin-left: 50px;"class="copyright-text" >Netflix India</div>
+    </div>
+</body>
+
+</html>

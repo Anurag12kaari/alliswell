@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 10px;
+            margin: 20px auto;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .cell:hover {
+            background-color: #d9d9d9;
+        }
+
+        .cell.disabled {
+            pointer-events: none;
+        }
+
+        #message {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #0074cc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+    <p id="message"></p>
+    <button id="restart">Restart</button>
+
+    <script>
+        const board = document.getElementById('board');
+        const cells = document.querySelectorAll('[data-cell]');
+        const message = document.getElementById('message');
+        const restartButton = document.getElementById('restart');
+        let currentPlayer = 'X';
+        let gameActive = true;
+
+        const winningCombinations = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6],
+           
+        ];
+
+        function checkWinner() {
+            for (let combination of winningCombinations) {
+                const [a, b, c] = combination;
+                if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
+                    gameActive = false;
+                    cells[a].style.background = '#00cc00';
+                    cells[b].style.background = '#00cc00';
+                    cells[c].style.background = '#00cc00';
+                    message.textContent = `${currentPlayer} wins!`;
+                }
+            }
+
+            if (!cells.some(cell => cell.textContent === '')) {
+                gameActive = false;
+                message.textContent = "It's a draw!";
+            }
+        }
+
+        function handleClick(event) {
+            const cell = event.target;
+            const cellIndex = Array.from(cells).indexOf(cell);
+
+            if (cell.textContent || !gameActive) return;
+
+            cell.textContent = currentPlayer;
+            cell.style.color = currentPlayer === 'X' ? 'red' : 'blue';
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            checkWinner();
+        }
+
+        function restartGame() {
+            cells.forEach(cell => {
+                cell.textContent = '';
+                cell.style.background = '#f0f0f0';
+                cell.style.color = '#000';
+            });
+            message.textContent = '';
+            currentPlayer = 'X';
+            gameActive = true;
+        }
+
+        cells.forEach(cell => cell.addEventListener('click', handleClick));
+        restartButton.addEventListener('click', restartGame);
+    </script>
+</body>
+</html>

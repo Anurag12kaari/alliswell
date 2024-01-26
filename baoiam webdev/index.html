@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Web Development Courses - Learn Web Development Online</title>
+    <link rel="shortcut icon" href="coursera.svg" type="image/x-icon">
+    <style>
+        @media screen and (max-width: 768px) {
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            .a {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .b {
+                width: 0px;
+                border: white;
+                color: white;
+                z-index: -1;
+            }
+
+            .c {
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                margin: auto;
+                z-index: 99;
+            }
+
+            .o {
+                margin-left: 0;
+            }
+
+            .navbar1 .options {
+                float: none;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .lp {
+                flex-direction: column;
+            }
+
+            .l,
+            .p {
+                width: 100%;
+            }
+
+            .container {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .navbar2 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar2 .options {
+                float: none;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .footer {
+                margin-top: 3600px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-column {
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+
+            /* Adjustments for screens up to 600px wide */
+            .footer {
+                margin-top: 3600px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .b {
+                width: 0px;
+                border: white;
+                color: white;
+                z-index: 1;
+            }
+
+            .footer-column {
+                margin-right: 0;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .c {
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                margin: auto;
+                z-index: 99;
+            }
+
+            .b {
+                max-width: 0;
+            }
+
+            .navbar {
+                display: none;
+            }
+
+            .navbar1 {
+                display: flex;
+            }
+
+            .navbar1 a:not(.explore) {
+                display: none;
+            }
+
+            .navbar1 input[type=text] {
+                width: 100%;
+            }
+
+            .navbar1 a.explore {
+                margin-right: 0;
+                margin-top: 10px;
+            }
+
+            .navbar2 a {
+                display: none;
+            }
+
+            .navbar2 .options a {
+                display: none;
+            }
+
+            .searches-container {
+                max-width: 100%;
+                margin: 0 10px;
+            }
+
+
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        * {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+
+        .numbered-div {
+            width: 50px;
+            height: 50px;
+            background-color: #1a237e;
+            /* Dark blue background color */
+            color: #fff;
+            /* White text color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        .navbar {
+            background-color: #000;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar1 {
+            background-color: #fff;
+            overflow: hidden;
+            position: sticky;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            top: 0px;
+        }
+
+        .navbar1 a {
+            float: left;
+            display: block;
+            color: #000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .d {
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+            height: 100vh;
+        }
+
+
+        .b {
+            width: 30%;
+        }
+
+        .c {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            width: 70%;
+            box-sizing: border-box;
+        }
+
+
+
+        .navbar1 a.explore {
+            background-color: blue;
+            color: white;
+            border-radius: 4px;
+            margin-right: 15px;
+            margin: 5px;
+        }
+
+        .navbar1 input[type=text] {
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        .navbar1 .options {
+            float: right;
+        }
+
+        .navbar1 .options a {
+            margin-left: 15px;
+        }
+
+        .ss {
+            display: flex;
+            background-color: #fff;
+            /* Dark background color */
+            color: #000;
+            padding: 20px;
+
+        }
+
+        p {
+            margin: 0;
+        }
+
+        /* .o {
+            margin-left: 800px;
+        } */
+
+        .o img {
+            height: 20px;
+            width: 20px;
+        }
+
+        a {
+            color: #000;
+            /* White link color */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar1 a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar1 a.logo img {
+            height: 20px;
+            /* Adjust the height as needed */
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .navbar2 {
+            background-color: #fff;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lp {
+            display: flex;
+        }
+
+        .l {
+
+            height: 200px;
+            width: 70%;
+        }
+
+        .p {
+            height: 200px;
+            width: 80%;
+        }
+
+        .container {
+            margin: 15px;
+            width: 220px;
+            height: 400px;
+            /* Adjust the width as needed */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            float: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.1);
+
+        }
+
+        .container img { 
+            margin-left: 15px;
+            margin-top: 15px;
+            height: 40%;
+            width: 220px;
+
+
+            border-radius: 15px;
+        }
+
+        .options a {
+            font-size: 12px;
+        }
+
+        .container p {
+            height: 60%;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .navbar2 a {
+            float: left;
+            display: block;
+            color: #000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar2 a img {
+            height: 100px;
+            /* Adjust the height as needed */
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .lu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar2 .options {
+            float: right;
+        }
+
+        .navbar2 .options a {
+            margin-left: 15px;
+        }
+
+        .navbar2 a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .searches-container {
+            max-width: 600px;
+            margin: 0 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+
+        }
+
+        .related-searches {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .search-item {
+            margin-bottom: 8px;
+        }
+
+        .footer {
+
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .footer-column h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-column img {
+            max-width: 60%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        .a {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .d {
+            height: 2200px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="#home">For Individuals
+        </a>
+        <a href="#about">For Businesses
+        </a>
+        <a href="#services">For Universities
+        </a>
+        <a href="#contact">For Governments</a>
+    </div>
+    <div class="navbar1">
+        <a href="#" class="logo"><img
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjIuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZpZXdCb3g9IjAgMCAxMTU1IDE2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiPjxwYXRoIGQ9Ik0xNTkuNzUgODEuNTRjMC00NC40OSAzNi42My04MC40NyA4Mi40My04MC40NyA0Ni4xMiAwIDgyLjc2IDM2IDgyLjc2IDgwLjQ3IDAgNDQuMTYtMzYuNjQgODAuOC04Mi43NiA4MC44LTQ1LjggMC04Mi40My0zNi42OC04Mi40My04MC44em0xMjUuNjEgMGMwLTIyLjI0LTE5LjMtNDEuODctNDMuMTgtNDEuODctMjMuNTUgMC00Mi44NSAxOS42My00Mi44NSA0MS44NyAwIDIyLjU3IDE5LjMgNDIuMiA0Mi44NSA0Mi4yIDIzLjkyIDAgNDMuMTgtMTkuNjMgNDMuMTgtNDIuMnptNzA1LjYzIDEuMzFjMC00OC43NCAzOS41OC04MS43OCA3NS41Ny04MS43OCAyNC41MyAwIDM4LjYgNy41MiA0OC4wOCAyMS45MmwzLjc3LTE5aDM2Ljc5djE1NS40aC0zNi43OWwtNC43NS0xNmMtMTAuNzkgMTEuNzgtMjQuMjEgMTktNDcuMSAxOS0zNS4zMy0uMDUtNzUuNTctMzEuMTMtNzUuNTctNzkuNTR6bTEyNS42MS0uMzNjLS4wOS0yMy41MjctMTkuNDctNDIuODM1LTQzLTQyLjgzNS0yMy41OSAwLTQzIDE5LjQxMS00MyA0M3YuMTY1YzAgMjEuNTkgMTkuMyA0MC44OSA0Mi44NiA0MC44OSAyMy44NSAwIDQzLjE0LTE5LjMgNDMuMTQtNDEuMjJ6TTk0NS43OCAyMlY0aC00MC4yM3YxNTUuMzloNDAuMjNWNzUuNjZjMC0yNS4xOSAxMi40NC0zOC4yNyAzNC0zOC4yNyAxLjQzIDAgMi43OS4xIDQuMTIuMjNMOTkxLjM2LjExYy0yMC45Ny4xMS0zNi4xNyA3LjMtNDUuNTggMjEuODl6bS00MDQuMjcuMDF2LTE4bC00MC4yMy4wOS4zNCAxNTUuMzcgNDAuMjMtLjA5LS4yMi04My43MmMtLjA2LTI1LjE4IDEyLjM1LTM4LjI5IDMzLjkzLTM4LjM0IDEuMzc2LjAwNCAyLjc1Mi4wODEgNC4xMi4yM0w1ODcuMSAwYy0yMSAuMTctMzYuMjIgNy4zOS00NS41OSAyMi4wMXpNMzM4Ljg4IDk5LjJWNC4wMWg0MC4yMlY5NC4zYzAgMTkuOTUgMTEuMTIgMzEuNzMgMzAuNDIgMzEuNzMgMjEuNTkgMCAzNC0xMy4wOSAzNC0zOC4yOFY0LjAxaDQwLjI0djE1NS4zOGgtNDAuMjF2LTE4Yy05LjQ4IDE0LjcyLTI0Ljg2IDIxLjkyLTQ2LjEyIDIxLjkyLTM1Ljk4LjAxLTU4LjU1LTI2LjE2LTU4LjU1LTY0LjExem0zOTEuNzQtMTcuNDhjLjA5LTQzLjUxIDMxLjIzLTgwLjc0IDgwLjYyLTgwLjY1IDQ1LjguMDkgNzguMTEgMzYuNzggNzggODAgLjAxIDQuMjczLS4zMyA4LjU0LTEgMTIuNzZsLTExOC40MS0uMjJjNC41NCAxOC42NSAxOS44OSAzMi4wOSA0My4xMiAzMi4xNCAxNC4wNiAwIDI5LjEyLTUuMTggMzguMy0xNi45NGwyNy40NCAyMmMtMTQuMTEgMTkuOTMtMzkgMzEuNjYtNjUuNDggMzEuNjEtNDYuNzUtLjE2LTgyLjY3LTM1LjIzLTgyLjU5LTgwLjd6bTExOC4xMi0xNi4xNGMtMi4yNi0xNS43LTE4LjU5LTI3Ljg0LTM3Ljg5LTI3Ljg3LTE4LjY1IDAtMzMuNzEgMTEuMDYtMzkuNjMgMjcuNzNsNzcuNTIuMTR6bS0yNjEuNCA1OS45NGwzNS43Ni0xOC43MmM1LjkxIDEyLjgxIDE3LjczIDIwLjM2IDM0LjQ4IDIwLjM2IDE1LjQzIDAgMjEuMzQtNC45MiAyMS4zNC0xMS44MiAwLTI1LTg0LjcxLTkuODUtODQuNzEtNjcgMC0zMS41MiAyNy41OC00OC4yNiA2MS43Mi00OC4yNiAyNS45NCAwIDQ4LjkyIDExLjQ5IDYxLjQgMzIuODNsLTM1LjQ0IDE4Ljc1Yy01LjI1LTEwLjUxLTE1LjEtMTYuNDItMjcuNTgtMTYuNDItMTIuMTQgMC0xOC4wNiA0LjI3LTE4LjA2IDExLjQ5IDAgMjQuMyA4NC43MSA4Ljg3IDg0LjcxIDY3IDAgMzAuMjEtMjQuNjIgNDguNTktNjQuMzUgNDguNTktMzMuODItLjAzLTU3LjQ2LTExLjE5LTY5LjI3LTM2Ljh6TTAgODEuNTRDMCAzNi43MyAzNi42My43NCA4Mi40My43NGMyNy45NDctLjE5NiA1NC4xODIgMTMuNzM3IDY5LjY3IDM3bC0zNC4zNCAxOS45MmE0Mi45NzIgNDIuOTcyIDAgMDAtMzUuMzMtMTguMzJjLTIzLjU1IDAtNDIuODUgMTkuNjMtNDIuODUgNDIuMiAwIDIyLjU3IDE5LjMgNDIuMiA0Mi44NSA0Mi4yYTQyLjUwMiA0Mi41MDIgMCAwMDM2LjMxLTIwbDM0IDIwLjI4Yy0xNS4zMDcgMjMuOTU1LTQxLjkwMiAzOC40MzEtNzAuMzMgMzguMjhDMzYuNjMgMTYyLjM0IDAgMTI1LjY2IDAgODEuNTR6IiBmaWxsPSIjMDA1NkQyIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4="
+                alt="Logo"></a>
+        <a href="#" class="explore">Explore</a>
+        <input type="text" placeholder="Search...">
+        <div class="options">
+            <a href="#">ONLINE DEGREES</a>
+            <a href="#">FIND YOUR NEW CAREER</a>
+            <a href="#">ENGLISH</a>
+            <a href="#">Shritam Ghosh</a>
+        </div>
+    </div>
+    <div class="navbar2">
+        <a href="#" class="option"><img src="1.png" alt="Option 1">IBM IT Project Manager</a>
+        <a href="#" class="option"><img src="2.png" alt="Option 2">Meta Software Developer</a>
+        <a href="#" class="option"><img src="3.png" alt="Option 3">IBM Software and DevOps Engineer</a>
+    </div>
+    <div class="a">
+        <div class="d">
+            <div class="b">
+                <h1>Filter By</h1>
+                <br>
+                <ul>
+                    <li>
+                        <strong>Level(Required)</strong> <br>
+                        <ul>
+                            <li><input type="checkbox" id="beginner"> <label for="beginner">Beginner(581)</label></li>
+                            <br>
+                            <li><input type="checkbox" id="intermediate"> <label
+                                    for="intermediate">Intermediate(491)</label></li> <br>
+                            <li><input type="checkbox" id="advanced"> <label for="advanced">Advanced(33)</label></li>
+                            <br>
+                            <li><input type="checkbox" id="mixed"> <label for="mixed">Mixed(99)</label></li> <br>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Duration(Required)</strong> <br>
+                        <ul>
+                            <li><input type="checkbox" id="lessThan2Hours"> <label for="lessThan2Hours">Less Than 2
+                                    Hours(406)</label></li> <br>
+                            <li><input type="checkbox" id="1-4Weeks"> <label for="1-4Weeks">1-4 Weeks(367)</label></li>
+                            <br>
+                            <li><input type="checkbox" id="1-3Months"> <label for="1-3Months">1-3 Months(296)</label>
+                            </li> <br>
+                            <li><input type="checkbox" id="3-6Months"> <label for="3-6Months">3-6 Months(126)</label>
+                            </li> <br>
+                            <li><input type="checkbox" id="6-12Months"> <label for="6-12Months">6-12 Months(4)</label>
+                            </li> <br>
+                            <li><input type="checkbox" id="1-4Years"> <label for="1-4Years">1-4 Years(8)</label></li>
+                            <br>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <strong>Skills(Required)</strong> <br>
+                        <ul>
+                            <li><input type="checkbox" id="webDevelopment"> <label for="webDevelopment">Web
+                                    Development(261)</label></li> <br>
+                            <li><input type="checkbox" id="computerProgramming"> <label
+                                    for="computerProgramming">Computer Programming(215)</label></li> <br>
+                            <li><input type="checkbox" id="javascript"> <label for="javascript">Javascript(192)</label>
+                            </li> <br>
+                            <li><input type="checkbox" id="leadershipManagement"> <label
+                                    for="leadershipManagement">Leadership and Management(130)</label></li> <br>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Subtitles(Required)</strong> <br>
+                        <ul>
+                            <li><input type="checkbox" id="english"> <label for="english">English(1,073)</label></li>
+                            <br>
+                            <li><input type="checkbox" id="spanish"> <label for="spanish">Spanish(600)</label></li> <br>
+                            <li><input type="checkbox" id="arabic"> <label for="arabic">Arabic(569)</label></li> <br>
+                            <li><input type="checkbox" id="french"> <label for="french">French(522)</label></li> <br>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Educator(Required)</strong> <br>
+                        <ul>
+                            <li><input type="checkbox" id="courseraProjectNetwork"> <label
+                                    for="courseraProjectNetwork">Coursera Project Network (373)</label></li> <br>
+                            <li><input type="checkbox" id="meta"> <label for="meta">Meta (127)</label></li> <br>
+                            <li><input type="checkbox" id="googleCloud"> <label for="googleCloud">Google Cloud
+                                    (70)</label></li> <br>
+                            <li><input type="checkbox" id="ibm"> <label for="ibm">IBM (51)</label></li> <br>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <strong>Subject(Required)</strong> <br>
+                        <ul>
+                            <li><input type="checkbox" id="computerScience"> <label for="computerScience">Computer
+                                    Science(858)</label></li> <br>
+                            <li><input type="checkbox" id="business"> <label for="business">Business(109)</label></li>
+                            <br>
+                            <li><input type="checkbox" id="informationTech"> <label for="informationTech">Information
+                                    Technology(107)</label></li> <br>
+                            <li><input type="checkbox" id="dataScience"> <label for="dataScience">Data
+                                    Science(52)</label></li> <br>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Language(Required)</strong> <br>
+                        <ul>
+                            <li><input type="checkbox" id="english"> <label for="english">English(970)</label></li> <br>
+                            <li><input type="checkbox" id="spanish"> <label for="spanish">Spanish(606)</label></li> <br>
+                            <li><input type="checkbox" id="arabic"> <label for="arabic">Arabic(579)</label></li> <br>
+                            <li><input type="checkbox" id="french"> <label for="french">French(523)</label></li> <br>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Learning Product(Required)</strong> <br>
+                        <ul>
+                            <li><input type="checkbox" id="guidedProjects"> <label for="guidedProjects">Guided
+                                    Projects(367) - Build job-relevant skills in under 2 hours with hands-on
+                                    tutorials.</label></li> <br>
+                            <li><input type="checkbox" id="courses"> <label for="courses">Courses(646) - Learn from top
+                                    instructors with graded assignments, videos, and discussion forums.</label></li>
+                            <br>
+                            <li><input type="checkbox" id="projects"> <label for="projects">Projects(39) - Learn a new
+                                    tool or skill in an interactive, hands-on environment.</label></li> <br>
+                            <li><input type="checkbox" id="specializations"> <label
+                                    for="specializations">Specializations(109) - Get in-depth knowledge of a subject by
+                                    completing a series of courses and projects.</label></li> <br>
+                            <li><input type="checkbox" id="professionalCertificates"> <label
+                                    for="professionalCertificates">Professional Certificates(43) - Earn career
+                                    credentials from industry leaders that demonstrate your expertise.</label></li> <br>
+                            <li><input type="checkbox" id="masterTrackCertificates"> <label
+                                    for="masterTrackCertificates">MasterTrack® Certificates(2) - Earn career credentials
+                                    while taking courses that count towards your Master’s degree.</label></li> <br>
+                            <li><input type="checkbox" id="degrees"> <label for="degrees">Degrees(8) - Earn your
+                                    Bachelor’s or Master’s degree online for a fraction of the cost of in-person
+                                    learning.</label></li> <br>
+                            <li><input type="checkbox" id="graduateCertificates"> <label
+                                    for="graduateCertificates">Graduate Certificates(2) - Earn a university-issued
+                                    career credential in a flexible, interactive format.</label></li> <br>
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="c">
+                <h2
+                    style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-left: 20px;">
+                    1,213 results for "Web Development"</h2>
+                <div class="ty">
+                    <div class="container">
+                        <img src="5.png" alt="Google UX Design">
+                        <p>
+                            <strong>IBM software fullstack developer</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="6.png" alt="Google UX Design">
+                        <p>
+                            <strong>HTML CSS JS for web development</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="7.png" alt="Google UX Design">
+                        <p>
+                            <strong>Web Design for Everybody Basic of Web Development</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="8.png" alt="Google UX Design">
+                        <p>
+                            <strong>Meta Frontend Development</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="9.png" alt="Google UX Design">
+                        <p>
+                            <strong>Introduction to Web Development</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="10.png" alt="Google UX Design">
+                        <p>
+                            <strong>Intro to frontend development</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="11.png" alt="Google UX Design">
+                        <p>
+                            <strong>built a full website using wordpress</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="12.png" alt="Google UX Design">
+                        <p>
+                            <strong>Meta Backend developer</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="13.png" alt="Google UX Design">
+                        <p>
+                            <strong>Google UX Design</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="4.png" alt="Google UX Design">
+                        <p>
+                            <strong>Build a portfolio Website using HTML CSS JS</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="14.png" alt="Google UX Design">
+                        <p>
+                            <strong>Python for Data Science</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                    <div class="container">
+                        <img src="15.png" alt="Google UX Design">
+                        <p>
+                            <strong>Fullstack Web development</strong><br>
+                            Skills you'll gain: User Experience, User Experience Design, User Research,
+                            <br><br>
+                            <strong>Build toward a degree</strong><br>
+                            4.8 (74K reviews)<br>
+                            Beginner · Professional Certificate · 3 - 6 Months
+                        </p>
+                    </div>
+                </div>
+                <div class="searches-container">
+                    <div class="related-searches">
+                        <p style="color: black;">Searches related to Web Development</p>
+                    </div>
+                    <div class="lp">
+                        <div class="l">
+                            <div class="search-item" style="color: blue;margin-top:20px"> web development</div>
+                            <div class="search-item" style="color: blue;margin-top:20px"> web development course</div>
+                            <div class="search-item" style="color: blue;margin-top:20px"> web development in react.js:
+                                development basics</div>
+                            <div class="search-item" style="color: blue;margin-top:20px">web development in flask: build
+                                your first website</div>
+                        </div>
+                        <div class="p">
+                            <div class="search-item" style="color: blue;margin-top:20px">web development free</div>
+                            <div class="search-item" style="color: blue;margin-top:20px">web development in react.js:
+                                build
+                                a web app</div>
+                            <div class="search-item" style="color: blue;margin-top:20px">web development with angularjs:
+                                build your first website</div>
+                            <div class="search-item" style="color: blue;margin-top:20px">web development in javascript:
+                                build your first website</div>
+                        </div>
+
+                    </div>
+                    <div class="lu">
+                        <div class="numbered-div">1</div>
+                        <div class="numbered-div" style="background-color: white;color: #000;">2</div>
+                        <div class="numbered-div" style="background-color: white;color: #000;">3</div>
+                        <div class="numbered-div" style="background-color: white;color: #000;">4</div>
+                        <div class="numbered-div" style="background-color: white;color: #000;">5</div>
+                        <p style="font-size: 40px;">...</p>
+                        <div class="numbered-div" style="background-color: white;color: #000;">84</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="e">
+            <div class="footer">
+                <div class="footer-column">
+                    <h2>Coursera</h2>
+                    <ul>
+                        <li>About</li>
+                        <li>What We Offer</li>
+                        <li>Leadership</li>
+                        <li>Careers</li>
+                        <li>Catalog</li>
+                        <li>Coursera Plus</li>
+                        <li>Professional Certificates</li>
+                        <li>MasterTrack® Certificates</li>
+                        <li>Degrees</li>
+                        <li>For Enterprise</li>
+                        <li>For Government</li>
+                        <li>For Campus</li>
+                        <li>Become a Partner</li>
+                        <li>Coronavirus Response</li>
+                        <li>Social Impact</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h2>Community</h2>
+                    <ul>
+                        <li>Learners</li>
+                        <li>Partners</li>
+                        <li>Beta Testers</li>
+                        <li>Translators</li>
+                        <li>Blog</li>
+                        <li>The Coursera Podcast</li>
+                        <li>Tech Blog</li>
+                        <li>Teaching Center</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h2>More</h2>
+                    <ul>
+                        <li>Press</li>
+                        <li>Investors</li>
+                        <li>Terms</li>
+                        <li>Privacy</li>
+                        <li>Help</li>
+                        <li>Accessibility</li>
+                        <li>Contact</li>
+                        <li>Articles</li>
+                        <li>Directory</li>
+                        <li>Affiliates</li>
+                        <li>Modern Slavery Statement</li>
+                        <li>Manage Cookie Preferences</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h2>Mobile App</h2>
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d3njjcbhbojbot.cloudfront.net/web/images/icons/download_on_the_app_store_badge_en.svg?auto=format%2Ccompress&dpr=2&w=152&h=45&q=40"
+                        alt="Image 1">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d3njjcbhbojbot.cloudfront.net/web/images/icons/en_generic_rgb_wo_45.png?auto=format%2Ccompress&dpr=2&w=152&h=45&q=40"
+                        alt="Image 2">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d3njjcbhbojbot.cloudfront.net/web/images/icons/2018-B-Corp-Logo-Black-S.png?auto=format%2Ccompress&dpr=2&w=151&h=120&q=40"
+                        alt="Image 3">
+
+                </div>
+            </div>
+            <div class="ss">
+                &copy; 2023 Your Company. All rights reserved.
+                <div class="o">
+                    <img
+                        src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/facebook.png?auto=format%2Ccompress&dpr=2&w=28&h=28&q=40">
+                    <img
+                        src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/linkedin.png?auto=format%2Ccompress&dpr=2&w=28&h=28&q=40">
+                    <img
+                        src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/twitter.png?auto=format%2Ccompress&dpr=2&w=28&h=28&q=40">
+                    <img
+                        src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/youtube.png?auto=format%2Ccompress&dpr=2&w=28&h=28&q=40">
+                    <img
+                        src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/footer/instagram.png?auto=format%2Ccompress&dpr=2&w=28&h=28&q=40">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

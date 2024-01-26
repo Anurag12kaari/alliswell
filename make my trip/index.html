@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+    <title>MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+
+            font-family: 'Arial', sans-serif;
+
+        }
+
+
+        .bigger-flight-info-container {
+            background-color: #f9f9f9;
+            padding: 3px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 300px;
+            box-sizing: border-box;
+        }
+
+        .flight-info-label {
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .flight-info-input {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .flight-info-select {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .flight-info-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin: auto;
+        }
+
+        nav img {
+            height: 50px;
+            /* Set the height of your logo */
+            width: auto;
+            margin-right: 20px;
+        }
+
+        .optionscontainer {
+            padding: 20px;
+            clear: both;
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+
+        .option-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .option-input {
+            margin-bottom: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 60px;
+        }
+
+        .p {
+            height: 90vh;
+            width: 100vw;
+            background: linear-gradient(black, blue);
+        }
+
+        .m {
+            margin-left: 500px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+
+        }
+
+        .po .object {
+            width: 50px;
+            height: 20px;
+            background-color: #3498db;
+            margin: 18px;
+
+        }
+
+        .options-container {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            height: 50px;
+            position: relative;
+            top: 30px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            margin-top: 10px;
+            display: flex;
+            width: 700px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .k {
+            display: flex;
+        }
+
+        .anu {
+            background-color: white;
+            padding: 10px;
+            height: 90%;
+            width: 90vw;
+            height: 50;
+            margin: auto;
+            margin-top: 130px;
+            border-radius: 30px;
+            box-shadow: -1px -1px 20px 14px black;
+            ;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* CSS styles for the navbar and its options */
+        .anu-navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .anu-navbar li {
+            float: left;
+        }
+
+        .anu-navbar li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .anu-navbar li a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .ty {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            height: 800px;
+            background-color: #f2f2f2;
+            margin: 20px;
+        }
+
+        /* CSS styles for individual small divs with background images */
+        .smalldiv {
+            margin: 10px;
+            width: 200px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: -1px 1px 19px black;
+        }
+
+        /* Background images for individual small divs */
+        .smalldiv:nth-child(1) {
+            background-image: url('2.avif');
+        }
+
+        .smalldiv:nth-child(2) {
+            background-image: url('3.avif');
+        }
+
+        .smalldiv:nth-child(3) {
+            background-image: url('4.avif');
+        }
+
+        .smalldiv:nth-child(4) {
+            background-image: url('5.avif');
+        }
+
+        .smalldiv:nth-child(5) {
+            background-image: url('98.avif');
+        }
+
+        .option {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .o {
+            display: flex;
+            width: 100%;
+            height: 50%;
+
+        }
+
+        .po {
+            justify-content: space-around;
+            height: 50px;
+            width: 900px;
+            margin: auto;
+            background-color: white;
+            margin-top: 60px;
+            border-radius: 50px;
+            box-shadow: 10px 10px 20px black;
+            display: flex;
+        }
+
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        /* CSS styles for individual small divs */
+        .small-div {
+            width: 300px;
+            height: 100px;
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+            box-shadow: -1px 1px 19px black;
+            border-radius: 15px;
+            display: flex;
+        }
+
+        .io {
+            border: 1px solid black;
+            height: 80%;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* CSS styles for images within small divs */
+        .small-div img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+
+        }
+
+        /* CSS styles for individual blog divs */
+        .blog {
+            display: flex;
+            width: 400px;
+            height: 150px;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 10px 10px 10px black;
+            margin: 25px;
+        }
+
+        .o {
+            display: flex;
+        }
+
+        .uy {
+            display: flex;
+        }
+
+        .blog img {
+            max-width: 100%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="p">
+        <nav>
+            <img src="1.png" alt="Logo">
+            <div class="m">
+                <ul>
+                    <li><a style="font-size: smaller;" href="#">Super Offers
+
+                            Explore great deals & offers</a></li>
+                    <li><a style="font-size: smaller;"href="#">Introducing myBiz
+
+                            Business Travel Solution</a></li>
+                    <li><a style="font-size: smaller;"href="#">My Trips
+
+                            Manage your bookings</a></li>
+                    <li><a style="font-size: smaller;"href="#">Login or Create Account</a></li>
+                    <li><a style="font-size: smaller;"href="#">
+                            IN | ENG | INR</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="options-container">
+            <div class="option"><img style="height: 100%; width: 100%;" src="11.png" alt=""></div>
+            <div class="option"><img style="height: 100%; width: 100%;" src="12.png" alt=""></div>
+            <div class="option"><img style="height: 100%; width: 100%;" src="13.png" alt=""></div>
+            <div class="option"><img style="height: 100%; width: 100%;" src="14.png" alt=""></div>
+            <div class="option"><img style="height: 100%; width: 100%;" src="15.png" alt=""></div>
+            <div class="option"><img style="height: 100%; width: 100%;" src="16.png" alt=""></div>
+            <div class="option"><img style="height: 100%; width: 100%;" src="17.png" alt=""></div>
+            <div class="option"><img style="height: 100%; width: 100%;" src="18.png" alt=""></div>
+            <div class="option"><img style="height: 100%; width: 100%;" src="19.png" alt=""></div>
+
+
+        </div>
+        <div class="bigger-flight-info-container">
+            <div class="optionscontainer">
+                <input type="radio" id="option1" name="options" class="option-input">
+                <label for="option1">One Way</label>
+
+                <input type="radio" id="option2" name="options" class="option-input">
+                <label for="option2">Round Trip</label>
+
+                <input type="radio" id="option3" name="options" class="option-input">
+                <label for="option3">Multicity</label>
+            </div>
+
+            <div class="o">
+                <div class="io"> <label for="from-location">From:</label>
+                   <p style="font-size: 20px;">Chennai</p>
+                   MAA, Chennai International Airport India
+                </div>
+                <div class="io"> <label for="to-location">To:</label>
+                    <p style="font-size: 20px;">Mumbai</p>
+                    BOM, Chhatrapati Shivaji International Airport India
+                </div>
+                <div class="io" style="font-size: 20px;">
+                    <p style="margin-top: 30px; font-size: 30px;">Departure: 11 Dec 2023</p></div>
+                <div class="io" style="font-size: 20px;"> Return To add a return date for bigger discounts</div>
+                <div class="io">
+                    <div class="flight-info-label">Travellers & Class</div>
+
+                    <label for="traveller-count">Number of Travellers:</label>
+                </div>
+            </div>
+            <div class="k">
+                <div class="flight-info-label">Select A Fare Type:</div>
+
+                <input type="radio" id="regular-fare" name="fare-type" value="regular">
+                <label for="regular-fare">Regular Fares</label>
+
+                <input type="radio" id="armed-forces-fare" name="fare-type" value="armed-forces">
+                <label for="armed-forces-fare">Armed Forces Fares</label>
+
+                <input type="radio" id="student-fare" name="fare-type" value="student">
+                <label for="student-fare">Student Fares</label>
+
+                <input type="radio" id="senior-citizen-fare" name="fare-type" value="senior-citizen">
+                <label for="senior-citizen-fare">Senior Citizen Fares</label>
+
+                <input type="radio" id="doctors-nurses-fare" name="fare-type" value="doctors-nurses">
+                <label for="doctors-nurses-fare">Doctors & Nurses Fares</label>
+
+                <input type="radio" id="double-seat-fare" name="fare-type" value="double-seat">
+                <label for="double-seat-fare">Double Seat Fares</label>
+            </div>
+            <button class="flight-info-button" style="   border-radius: 50px; margin-left: 540px;
+        position: relative;
+        top: 15px;">SEARCH</button>
+            <div class="po">
+                <div class="object"></div>
+                <div class="object"></div>
+                <div class="object"></div>
+                <div class="object"></div>
+                <div class="object"></div>
+            </div>
+        </div>
+    </div>
+    <div class="anu">
+        <ul class="anu-navbar">
+            <li><a href="#" style="font-size: 50px;"> Offers</a></li>
+            <li><a href="#" style="margin-top: 20px;">All Offers</a></li>
+            <li><a href="#" style="margin-top: 20px;">Bank Offers</a></li>
+            <li><a href="#" style="margin-top: 20px;">Flights</a></li>
+            <li><a href="#" style="margin-top: 20px;">Hotels</a></li>
+            <li><a href="#" style="margin-top: 20px;">Holidays</a></li>
+            <li><a href="#" style="margin-top: 20px;">Trains</a></li>
+            <li><a href="#" style="margin-top: 20px;">Cabs</a></li>
+            <li><a href="#" style="margin-left: 80px; margin-top: 20px; font-size: 25px;">VIEW ALL
+                </a></li>
+        </ul>
+        <br>
+        <div class="blog-container">
+            <div class="blog">
+                <img src="2.avif" alt="Blog 1">
+                <p>Some text for Blog 1.</p>
+            </div>
+
+            <div class="blog">
+                <img src="3.avif" alt="Blog 2">
+                <p>Some text for Blog 2.</p>
+            </div>
+
+            <div class="blog">
+                <img src="4.avif" alt="Blog 3">
+                <p>Some text for Blog 3.</p>
+            </div>
+
+            <div class="blog">
+                <img src="5.avif" alt="Blog 4">
+                <p>Some text for Blog 4.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="small-div">
+            <img src="7.png" alt="Image 1">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, doloribus.
+        </div>
+
+        <div class="small-div">
+            <img src="8.avif" alt="Image 2">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, fugiat.
+        </div>
+
+        <div class="small-div">
+            <img src="9.avif" alt="Image 3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptate reprehenderit!
+        </div>
+    </div>
+    <div class="ty">
+        <div class="i"
+            style="width: 100%; font-size: 30px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            Lorem ipsum dolor sit amet.
+        </div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse;color: #ddd;">Lorem ipsum dolor sit
+            amet
+            consectetur adipisicing.</div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse; color: #ddd;">Lorem ipsum dolor sit
+            amet
+            consectetur adipisicing.</div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse; color: white;">Lorem ipsum dolor sit
+            amet
+            consectetur adipisicing.</div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse;color:#fff" ;">Lorem ipsum dolor sit
+            amet
+            consectetur adipisicing.</div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse; color: #ddd;">
+            <img style="height: 100%;" src="98.avif" alt="">
+        </div>
+    </div>
+    <div class="ty">
+        <div class="i"
+            style="width: 100%; font-size: 30px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            Lorem ipsum dolor sit amet.
+        </div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse;color: #ddd;">Lorem ipsum dolor sit
+            amet
+            consectetur adipisicing.</div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse; color: #ddd;">Lorem ipsum dolor sit
+            amet
+            consectetur adipisicing.</div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse; color: white;">Lorem ipsum dolor sit
+            amet
+            consectetur adipisicing.</div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse;color:#fff" ;">Lorem ipsum dolor sit
+            amet
+            consectetur adipisicing.</div>
+        <div class="smalldiv" style="display: flex; flex-direction: column-reverse; color: #ddd;">
+            <img style="height: 100%;" src="98.avif" alt="">
+        </div>
+        <div class="content">
+
+            <!-- Product Offering Section -->
+            <div class="section">
+                <h2>PRODUCT OFFERING</h2>
+                <p>
+                    Flights, International Flights, Charter Flights, Hotels, International Hotels, Homestays and Villas,
+                    Activities,
+                    Holidays In India, International Holidays, Book Hotels From UAE, myBiz for Corporate Travel, Book
+                    Online Cabs,
+                    Book Bus Tickets, Book Train Tickets, Cheap Tickets to India, Book Flights From US, Book Flights
+                    From UAE, Trip Planner,
+                    Gift Cards, Trip Money, Trip Ideas, Travel Blog, PNR Status, MakeMyTrip Advertising Solutions, One
+                    Way Cab
+                </p>
+            </div>
+
+            <!-- MakeMyTrip Section -->
+            <div class="section">
+                <h2>MAKEMYTRIP</h2>
+                <p>
+                    About Us, Investor Relations, Careers, MMT Foundation, Legal Notices, CSR Policy, myPartner - Travel
+                    Agent Portal,
+                    Foreign Exchange, List your hotel, Partners- Redbus, Partners- Goibibo, Partners- BookMyForex,
+                    Advertise with Us,
+                    RedBus Ferry Malaysia, RedBus Ferry Singapore
+                </p>
+            </div>
+
+            <!-- About the Site Section -->
+            <div class="section">
+                <h2>ABOUT THE SITE</h2>
+                <p>
+                    Customer Support, Payment Security, Privacy Policy, Cookie Policy, User Agreement, Terms of Service,
+                    More Offices,
+                    Make A Payment, Work From Home, Report Security Issues
+                </p>
+            </div>
+            <div class="uy">
+                <div class="content">
+                    <h2>Why MakeMyTrip?</h2>
+                    <p>
+                        Established in 2000, MakeMyTrip has since positioned itself as one of the leading companies,
+                        providing great offers, competitive airfares, exclusive discounts, and a seamless online booking
+                        experience to many of its customers. The experience of booking your flight tickets, hotel stay,
+                        and holiday package through our desktop site or mobile app can be done with complete ease and no
+                        hassles at all. We also deliver amazing offers, such as Instant Discounts, Fare Calendar,
+                        MyRewardsProgram, MyWallet, and many more while updating them from time to time to better suit
+                        our customers’ evolving needs and demands.
+                    </p>
+                </div>
+
+                <div class="content">
+                    <h2>Booking Flights with MakeMyTrip</h2>
+                    <p>
+                        At MakeMyTrip, you can find the best of deals and cheap air tickets to any place you want by
+                        booking your tickets on our website or app. Being India’s leading website for hotel, flight, and
+                        holiday bookings, MakeMyTrip helps you book flight tickets that are affordable and customized to
+                        your convenience. With customer satisfaction being our ultimate goal, we also have a 24/7
+                        dedicated helpline to cater to our customer’s queries and concerns. Serving over 5 million happy
+                        customers, we at MakeMyTrip are glad to fulfill the dreams of folks who need a quick and easy
+                        means to find air tickets. You can get a hold of the cheapest flight of your choice today while
+                        also enjoying the other available options for your travel needs with us.
+                    </p>
+                </div>
+
+                <div class="content">
+                    <h2>Domestic Flights with MakeMyTrip</h2>
+                    <p>
+                        MakeMyTrip is India's leading player for flight bookings. With the cheapest fare guarantee,
+                        experience great value at the lowest price. Instant notifications ensure current flight status,
+                        instant fare drops, amazing discounts, instant refunds and rebook options, price comparisons and
+                        many more interesting features.
+                    </p>
+                </div>
+            </div>
+            <footer>
+                <p>&copy; 2023 Your Company Name. All Rights Reserved.</p>
+            </footer>
+</body>
+
+</html>

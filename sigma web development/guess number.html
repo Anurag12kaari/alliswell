@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Guess the Number Game</h1>
+
+    <p>Guess a number between 1 and 100:</p>
+    <input type="text" id="guessInput" min="1" max="100">
+    <button onclick="checkGuess()">Check Guess</button>
+
+    <div id="result"></div>
+    <script>
+        var secretNumber = Math.floor(Math.random() * 100) + 1;
+        var attempts = 0;
+        var maxAttempts = 10;
+        function checkGuess() {
+            attempts++;
+            var userGuess = parseInt(document.getElementById('guessInput').value);
+            if (userGuess === secretNumber) {
+                displayResult('Congratulations! You guessed the correct number.');
+            }
+            else if (attempts === maxAttempts) {
+                displayResult('Sorry, you ran out of attempts. The correct number was ' + secretNumber + '.');
+            }
+            else if (userGuess < secretNumber) {
+                displayResult('Too low! Try again. Attempts left: ' + (maxAttempts - attempts));
+            }
+            else {
+                displayResult('Too high! Try again. Attempts left: ' + (maxAttempts - attempts));
+            }
+            function displayResult(message) {
+                document.getElementById('result').innerHTML = message;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode/Light Mode Toggle</title>
+  <style>
+    body {
+      transition: background-color 0.3s ease;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      color: #333;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .dark-mode .container {
+      background-color: #444;
+      color: #fff;
+    }
+
+    /* Toggle button styles */
+    .toggle-btn {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="content">
+    <h1>Dark Mode/Light Mode Toggle</h1>
+    <p>This is some sample content.</p>
+  </div>
+
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+
+  <script>
+    function toggleMode() {
+      var body = document.body;
+      body.classList.toggle("dark-mode");
+    }
+  </script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode/Light Mode Toggle</title>
+  <style>
+    body {
+      transition: background-color 0.3s ease;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      color: #333;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .dark-mode .container {
+      background-color: #444;
+      color: #fff;
+    }
+
+    /* Toggle button styles */
+    .toggle-btn {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="content">
+    <h1>Dark Mode/Light Mode Toggle</h1>
+    <p>This is some sample content.</p>
+  </div>
+
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+
+  <script>
+    function toggleMode() {
+      var body = document.body;
+
+      // Check if dark mode is active
+      if (body.classList.contains("dark-mode")) {
+        // If yes, switch to light mode
+        body.classList.remove("dark-mode");
+      } else {
+        // If not, switch to dark mode
+        body.classList.add("dark-mode");
+      }
+    }
+  </script>
+
+</body>
+</html>

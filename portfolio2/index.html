@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        display: flex;
+        background: linear-gradient(black, white);
+    }
+
+    .as {
+        height: 100vh;
+        width: 50vw;
+
+    }
+
+    .ad {
+        box-shadow: 20px 19px 25px 2px darkred;
+        height: 90vh;
+        width: 40vw;
+        background-color: rgba(29, 189, 186, 0.662);
+        border: 2px solid rgb(0, 0, 0);
+        background: url(ph.jpg);
+        background-size: cover;
+        background-position: top;
+        transition: all ease 1s;
+
+    }
+
+    .ad:hover {
+        filter: brightness(1.2);
+        scale: 1.1;
+    }
+
+    .me {
+        margin-top: 40%;
+        margin-left: 10%;
+    }
+
+    .me h1 {
+        font-weight: 800;
+        font-size: 60px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .li p a:hover {
+        color: black;
+        background-color: lightgray;
+        padding: 10px;
+    }
+
+    .mr {
+        margin-top: 20px;
+    }
+
+    .li {
+        display: flex;
+        gap: 20px;
+    }
+
+    .li p a {
+        color: black;
+        background-color: orange;
+        padding: 15px;
+        border-radius: 10px;
+        transition: 0.9s;
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>
+
+<body>
+    <div class="as">
+        <div class="me">
+            <h1>HEY I'M ANURAG &nbsp DUTTA</h1>
+            <div class="mr"
+                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                I'm a 2nd year student at SRM University, pursuing Bachelor Of Technology in the field of Computer
+                Science Engineering Core. I'm also a Web Developer..
+            </div>
+            <div class="li">
+                <p><a href="index2.html">EDUCATION</a></p>
+                <p><a href="index3.html">PROJECTS</a></p>
+                <p><a href="index5.html">CONTACT ME</a></p>
+                <p><a href="index4.html">SKILLS</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="ad"></div>
+</body>
+
+</html>

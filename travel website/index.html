@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yatra</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  html,
+  body {
+    position: relative;
+   
+  }
+
+  body {
+    overflow-y: auto;
+    min-height: 100vh;
+  }
+
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  footer {
+    background: #f1f1f1;
+    width: 100%;
+    padding: 16px 0px;
+    color: #999;
+    position: absolute;
+    bottom: 0;
+    /* width: 100%; */
+    /* height: 2.5rem;   */
+  }
+
+  .banner {
+    height: 500px;
+    width: 100%;
+    background: #999;
+    margin: 20px 0px;
+  }
+
+  .content {
+    padding: 100px 0px;
+    margin: 0px 50px;
+    /* display: flex;
+  flex-wrap: wrap; */
+  }
+
+  .tile {
+    position: relative;
+    height: 100%;
+    /* width: calc(25% - 20px); */
+    /* padding: 6px; */
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-transition: 0.2s all;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .tile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    -webkit-transition: 0.2s all;
+    /* -webkit-filter: brightness(70%); */
+  }
+
+  .tile img:hover {
+    -webkit-filter: brightness(50%);
+    transform: scale(1.1);
+  }
+
+  .tile-text {
+    position: absolute;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://images.pexels.com/photos/2422461/pexels-photo-2422461.jpeg?cs=srgb&dl=pexels-josh-hild-2422461.jpg&fm=jpg");
+
+    /* Set a specific height */
+    height: 50vh;
+    width: 100vw;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .hero-subheading {
+    font-size: 24px;
+    font-weight: 325;
+  }
+
+  .hero-input {
+    width: 80%;
+    height: 50px;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+  }
+
+  .nav-link {
+    margin-right: 36px;
+  }
+
+  /* activity page css */
+
+  .activity-card {
+    color: #000;
+    position: relative;
+    height: 350px;
+    /* width: calc(25% - 20px); */
+    /* padding: 6px; */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-transition: 0.2s all;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .activity-card img {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 8px; */
+    -webkit-transition: 0.2s all;
+    /* -webkit-filter: brightness(70%); */
+  }
+
+  .activity-card img:hover {
+    -webkit-filter: brightness(50%);
+
+    /* transform: scale(1.1); */
+  }
+
+  /* activity-detail page css */
+
+  .adventure-detail-card {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 16px;
+    /* margin: 8px; */
+  }
+
+  .activity-card-image {
+    height: 500px;
+    width: 100%;
+    cursor: pointer;
+    -webkit-transition: 0.2s all;
+    border-radius: 2px;
+  }
+
+  .activity-card-image:hover {
+    -webkit-filter: brightness(50%);
+    transform: scale(1.1);
+  }
+
+  .experience-content ul li {
+    margin-left: 16px;
+    padding: 0;
+  }
+
+  .filter-bar {
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    padding: 20px 0px;
+  }
+
+  .filter-bar-tile {
+    border-right: 1px solid #999;
+    padding: 0px 20px;
+  }
+
+  .category-filter {
+    border: 1px solid orange;
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin: 10px 10px 10px 0px;
+  }
+
+  .category-banner {
+    position: absolute;
+    /* height: 50px; */
+    padding: 5px 10px;
+    box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
+    /*
+  box-shadow: 0px 9.4px 20.4px rgba(0, 0, 0, 0.13),
+    0px 9.2px 20.6px rgba(0, 0, 0, 0.1); */
+    min-width: 50%;
+    color: #fff;
+    background: rgb(255, 145, 0);
+    top: 0;
+    right: 0;
+    z-index: 1;
+    margin-top: 16px;
+    margin-right: -4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0px 0px 10px;
+    font-weight: bolder;
+  }
+
+  .reserve-button {
+    width: 100%;
+    border: none;
+    background-color: rgb(255, 145, 0);
+    color: #fff;
+    font-weight: bolder;
+    padding: 15px;
+    margin: 20px 0px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .reserve-button:hover {
+    background-color: rgb(226, 129, 1);
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  #reserved-banner {
+    display: none;
+  }
+
+  .reservation-visit-button {
+    background-color: rgb(255, 145, 0);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    white-space: nowrap;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .reservation-visit-button:hover {
+    background-color: rgb(226, 129, 1);
+  }
+
+  #carouselExampleIndicators {
+    width: 100%;
+  }
+
+  #reservation-panel-sold-out {
+    border: solid 1px #eee;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 30px;
+  }
+
+  #reservation-panel-available {
+    border: solid 1px #eee;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .tile-text h5 {
+      font-size: 16px;
+    }
+
+    .tile-text p {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ps-3">
+    <a class="navbar-brand" href="#">Yatra</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav d-flex justify-content-end w-100">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./pages/adventures/reservations/">Reservations</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero image section -->
+  <div class="hero-image d-flex justify-content-center align-items-center text-white flex-column text-center">
+    <div class="container">
+      <h1>Welcome to Yatra</h1>
+      <p class="hero-subheading">
+        Explore the world with fantastic places to venture around
+      </p>
+      <input class="hero-input" placeholder="Search a City" />
+    </div>
+  </div>
+
+  <!-- Content section -->
+  <div class="container">
+    <div class="content text-white">
+      <div class="row" id="data">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer section -->
+  <footer>
+    <div class="container">© Yatra 2022</div>
+  </footer>
+
+  <!-- Bootstrap script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+  <!-- Script for plugging in HTML of the Content section -->
+  <script type="module">
+    import { init } from "./modules/landing_page.js";
+
+    //entry point (executed when DOM is loaded)
+    (async function () {
+
+      init();
+    })();
+  </script>
+ 
+
+<div class="container">
+    <div class="content">
+        <h1>Your Reservations</h1>
+        <br />
+
+        <div class="alert alert-dark" role="alert" id="no-reservation-banner">
+            Oops! You have not made any reservations yet! (Click
+            <a href="../../../"><strong>here</strong></a>
+            to explore some cities)
+        </div>
+        <div class="row" id="reservation-table-parent">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Transaction ID</th>
+                        <th scope="col">Booking Name</th>
+                        <th scope="col">Adventure</th>
+                        <th scope="col">Person(s)</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Booking Time</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="reservation-table">
+                     
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">© Yatra 2022</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+<script type="module">
+    import {
+        fetchReservations, addReservationToTable
+    } from "../../../modules/reservation_page.js";
+    (async function () {
+        const reservations = await fetchReservations();
+        console.log(reservations)
+        addReservationToTable(reservations);
+    })();
+
+</script>
+
+
+<div class="container">
+  <div class="content">
+      <h1>Explore all adventures</h1>
+      <p style="font-size: 24px">
+          Here's a list of places that you can explore in city
+      </p>
+      <div class="mb-5">
+          <div class="filter-bar d-flex align-items-center">
+              <div class="filter-bar-tile">
+                  <label for="duration">Filters:</label>
+              </div>
+              <div class="filter-bar-tile d-flex align-items-center">
+                  <select class="form-control" name="duration" id="duration-select"
+                      onchange="selectDuration(event)">
+                      <option disabled selected value="">
+                          Filter by Duration (Hours)
+                      </option>
+                      <option value="0-2">0-2 Hours</option>
+                      <option value="2-6">2-6 Hours</option>
+                      <option value="6-12">6-12 Hours</option>
+                      <option value="12-99">12+ Hours</option>
+                  </select>
+                  <div class="ml-3" style="color: #0645ad; cursor: pointer" onclick="clearDuration(event)">
+                      Clear
+                  </div>
+              </div>
+              <div class="filter-bar-tile d-flex align-items-center">
+                  <select class="form-control" id="category-select" onchange="selectCategory(event)">
+                      <option disabled selected value="">Add Category</option>
+                      <option value="Cycling">Cycling Routes</option>
+                      <option value="Hillside">Hillside Getaways</option>
+                      <option value="Beaches">Serene Beaches</option>
+                      <option value="Party">Party Spots</option>
+                  </select>
+                  <div class="ml-3" style="color: #0645ad; cursor: pointer" onclick="clearCategory(event)">
+                      Clear
+                  </div>
+              </div>
+          </div>
+          <div class="mt-2" id="category-section">
+              <div class="d-flex align-items-center" id="category-list">
+                  
+              </div>
+          </div>
+      </div>
+      <div class="row " id="data">
+               
+      </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">© Yatra 2022</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+  crossorigin="anonymous"></script>
+
+<script type="module">
+  import {
+      getCityFromURL,
+      fetchAdventures,
+      addAdventureToDOM,
+      filterByDuration,
+      filterByCategory,
+      filterFunction,
+      saveFiltersToLocalStorage,
+      getFiltersFromLocalStorage,
+      generateFilterPillsAndUpdateDOM
+  } from "../../modules/adventures_page.js";
+
+  // Declaring global variable adventure
+  let adventures;
+
+  //Checks if filters are available in local storage and sets the value accordingly
+  // The structure of "filters" object is { duration : "6-10", category : [] }, which basically means duration is single-value filter and category is multi-value filter
+
+  let filters =
+      getFiltersFromLocalStorage() !== null
+          ? getFiltersFromLocalStorage()
+          : { duration: "", category: [] };
+
+
+  //entry point (executed when DOM is loaded)
+  (async function () {
+
+      //Fetches the City from URL query param (here : window.location.search is an in-built browser property that returns the query param from URL, example: http://localhost:8081/?city=bengaluru => window.location.search would return "?city=bengaluru")
+      let city = await getCityFromURL(window.location.search);
+
+      //Fetches the adventures for the particular city
+      adventures = await fetchAdventures(city);
+
+      //Applies filters on the adventures list
+      let filteredAdventures = filterFunction(adventures, filters);
+      
+
+      //Updates the filtered adventures list to the DOM
+      addAdventureToDOM(filteredAdventures)
+
+      // Updates the DOM with filter pills if any
+      generateFilterPillsAndUpdateDOM(filters);
+  })();
+
+
+  //executed when onChange() is triggered on duration filter dropdown
+  function selectDuration(event) {
+      // TODO: MODULE_FILTERS
+      // 1. Change the DOM to show the selected duration filter. Use the provided input event
+      // 2. Invoke saveFiltersToLocalStorage here
+      document.getElementById("data").innerText="";
+      let duration = event.target.value;
+     
+      filters["duration"]= duration;
+      let filteredAdventures = filterFunction(adventures,filters)
+      addAdventureToDOM(filteredAdventures)
+      saveFiltersToLocalStorage(filters)
+
+
+  }
+
+  //executed when clear button is clicked on duration filter dropdown
+  function clearDuration(event) {
+      // TODO: MODULE_FILTERS
+      // 1. Change the DOM to clear the Duration filter. Refer clearCategory() below
+      // 2. Invoke saveFiltersToLocalStorage here
+      document.getElementById("data").innerText="";
+      document.getElementById('duration-select').selectedIndex=0
+      filters["duration"]="";
+      let filteredAdventures = filterFunction(adventures,filters);
+      addAdventureToDOM(filteredAdventures)
+      saveFiltersToLocalStorage(filters)
+
+  }
+
+
+
+  //executed when onChange() is triggered on category filter dropdown
+  function selectCategory(event) {
+      document.getElementById("data").textContent = "";
+      document.getElementById("category-list").textContent = "";
+
+      let category = event.target.value;
+     document.getElementById("category-select").selectedIndex = 0;
+      
+
+      filters["category"].push(category);
+      filters["category"] = filters["category"].filter(onlyUnique);
+
+
+      generateFilterPillsAndUpdateDOM(filters);
+      let filteredAdventures = filterFunction(adventures, filters);
+       
+      addAdventureToDOM(filteredAdventures);
+
+      // TODO: MODULE_FILTERS
+      // 1. Invoke saveFiltersToLocalStorage here
+      saveFiltersToLocalStorage(filters)
+  }
+
+  //executed when clear button is clicked on category filter dropdown
+  function clearCategory(event) {
+      document.getElementById("data").textContent = "";
+      document.getElementById("category-list").textContent = "";
+
+      filters["category"] = [];
+      let filteredAdventures = filterFunction(adventures, filters);
+      addAdventureToDOM(filteredAdventures);
+
+      // TODO: MODULE_FILTERS
+      // 1. Invoke saveFiltersToLocalStorage here
+      saveFiltersToLocalStorage(filters)
+  }
+
+  //helper function
+  function onlyUnique(value, index, self) {
+      return self.indexOf(value) === index;
+  }
+
+  //registering module based functions in the DOM in order for them to work
+  window.selectDuration = selectDuration;
+  window.selectCategory = selectCategory;
+  window.clearDuration = clearDuration;
+  window.clearCategory = clearCategory;
+</script>
+
+<div class="container">
+  <div class="content">
+      <div class="alert alert-success" id="reserved-banner">
+          Greetings! Reservation for this adventure is successful. (Click
+          <a href="../reservations/"><strong>here</strong></a>
+          to view your reservations)
+      </div>
+      <div class="row">
+          <div class="col-lg-8">
+              <div class="adventure-detail-card mb-3">
+                  <div>
+                      <h1 id="adventure-name"></h1>
+                      <p style="font-size: 20px; color: #999" id="adventure-subtitle"></p>
+                  </div>
+                  <div class="row mb-3" id="photo-gallery">
+                      
+                       
+                  </div>
+
+                  <hr />
+                  <h5>About the Experience</h5>
+                  <div id="adventure-content"></div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="">
+                  <div id="reservation-panel-sold-out">
+                      <h3>Sold Out!</h3>
+                      <hr />
+                      This activity is currently sold out. But there's a lot more to
+                      <a href="../../../" style="color: orange !important">explore.</a>
+                  </div>
+                  <div id="reservation-panel-available">
+                      <form id="myForm" action="" method="">
+                          <label>Name</label>
+                          <input type="text" class="form-control" name="name" required />
+                          <br />
+                          <label>Pick a Date</label>
+                          <input type="date" class="form-control" name="date" required />
+                          <hr />
+                          <div class=" d-flex align-items-center justify-content-between">
+                              <div>
+                                  <h6 class="m-0">Person(s)</h6>
+                                  <p class="m-0" style="font-size: 16px; color: #999">
+                                  <div class="d-inline">₹</div>
+                                  <div class="d-inline" id="reservation-person-cost">0</div> per head
+                                  </p>
+                              </div>
+                              <div>
+                                  <input type="number" class="form-control" min="1" max="10" value="0"
+                                      name="person" required onkeyup="onPersonsChange(event)"
+                                      style="width: 100px" />
+                              </div>
+                          </div>
+                          <hr />
+                          <div class="d-flex align-items-center justify-content-between">
+                              <div>
+                                  <h6 class="m-0">Total</h6>
+                              </div>
+                              <div>
+                                  <h5>
+                                      ₹
+                                      <div class="d-inline" id="reservation-cost">0</div>
+                                  </h5>
+                              </div>
+                          </div>
+                          <button class="reserve-button" type="submit">Reserve</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<footer>
+  <div class="container">© Yatra 2022</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+  crossorigin="anonymous"></script>
+<script type="module">
+  import {
+      getAdventureIdFromURL,
+      fetchAdventureDetails,
+      addAdventureDetailsToDOM,
+      addBootstrapPhotoGallery,
+      conditionalRenderingOfReservationPanel,
+      captureFormSubmitUsingJQuery,
+      calculateReservationCostAndUpdateDOM,
+      showBannerIfAlreadyReserved,
+  } from "../../../modules/adventure_details_page.js";
+  (async function () {
+      let adventureId = await getAdventureIdFromURL(window.location.search);
+       
+      let adventureDetails = await fetchAdventureDetails(adventureId);
+      console.log(adventureDetails)
+      addAdventureDetailsToDOM(adventureDetails);
+      addBootstrapPhotoGallery(adventureDetails.images);
+      conditionalRenderingOfReservationPanel(adventureDetails);
+      captureFormSubmitUsingJQuery(adventureDetails);
+      showBannerIfAlreadyReserved(adventureDetails);
+      function onPersonsChange(event) {
+          calculateReservationCostAndUpdateDOM(
+              adventureDetails,
+              event.target.value
+          );
+      }
+      window.onPersonsChange = onPersonsChange;
+  })();
+</script>
+
+</body>
+
+</html>

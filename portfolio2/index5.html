@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact ME</title>
+</head>
+<style> 
+   body {
+    font-family: Arial, sans-serif;
+   background: linear-gradient(black,white);
+display: flex;
+justify-content: flex-end;
+flex-direction: column;
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+/* Style the navigation links */
+.nav-links {
+    list-style: none;
+    text-align: right;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-links .active a {
+    font-weight: bold;
+    color: #0f1414;
+}
+
+/* Style the contact section */
+#contact {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin: 20px 0;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: #160303;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.contact-list img {
+    width: 40px;
+    margin-right: 10px;
+}
+nav{
+display: flex;
+justify-content: flex-end;
+flex-direction: row;
+
+gap: 20px;
+}
+nav p a{
+color:black;
+        background-color:orange;
+        padding: 15px;
+        border-radius: 10px;
+        transition: 0.9s;
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav p a:hover{
+        color: black;
+        background-color:lightgray ;
+        padding: 10px;
+    }
+</style>
+<body>
+    <nav>
+        <p><a href="index.html">HOME</a></p>
+        <p><a href="index3.html">PROJECTS</a></p>
+        <p><a href="index5.html">CONTACT ME</a></p>
+        <p><a href="index4.html">SKILLS</a></p>
+        <p><a href="Anurag dutta portfolio.docx">DOWNLOAD RESUME</a></p>
+    </nav>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me through the following channels:</p>
+            <ul class="contact-list">
+
+                <li>
+                    <a href="https://github.com/Anurag12kaari" target="_blank">
+                        <img src="data:image/png;base64,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" alt="GitHub"> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="anuragdutta2004@gmail.com">
+                        <img src="data:image/png;base64,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" alt="Email">anuragdutta2004@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/anurag-dutta-491643256/">
+                        <img src="data:image/png;base64,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" alt="Email">Linked in
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerrank.com/profile/ad9973">
+                        <img src="data:image/png;base64,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" alt="Email">Hackerrank 
+                    </a>
+                </li>
+            
+                <li>Adress
+                    <br>
+                  
+
+
+
+Manoranjitham Hostel, Potheri , Chengalpattu, Tamil Nadu - 603203
+<br>
+
+ CONTACT NO. 6294013920
+<br>
+UNIVERSITY-
+ad9973@srmist.edu.in
+<br>
+ PERSONAL-
+anuragdutta2004@gmail.co m
+
+
+                    
+                </li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGPA Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    #calculator {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div id="calculator">
+  <h2>CGPA Calculator</h2>
+  <label for="credit">Credit:</label>
+  <input type="text" id="credit" placeholder="Enter credit">
+
+  <label for="grade">Grade:</label>
+  <input type="text" id="grade" placeholder="Enter grade">
+
+  <button onclick="calculateCGPA()">Add Course</button>
+
+  <div id="result">CGPA: <span id="cgpa">0.00</span></div>
+</div>
+
+<script>
+  let totalCredits = 0;
+  let totalGradePoints = 0;
+
+  function calculateCGPA() {
+    const creditInput = document.getElementById("credit");
+    const gradeInput = document.getElementById("grade");
+
+    const credit = parseFloat(creditInput.value);
+    const grade = convertGradeToPoint(gradeInput.value.toUpperCase());
+
+    if (!isNaN(credit) && !isNaN(grade)) {
+      totalCredits += credit;
+      totalGradePoints += credit * grade;
+
+      const cgpa = (totalGradePoints / totalCredits).toFixed(2);
+      document.getElementById("cgpa").innerText = cgpa;
+
+      // Clear inputs
+      creditInput.value = "";
+      gradeInput.value = "";
+    } else {
+      alert("Please enter valid credit and grade");
+    }
+  }
+
+  function convertGradeToPoint(grade) {
+    switch (grade) {
+      case "A":
+        return 4.0;
+      case "A-":
+        return 3.7;
+      case "B+":
+        return 3.3;
+      case "B":
+        return 3.0;
+      case "B-":
+        return 2.7;
+      case "C+":
+        return 2.3;
+      case "C":
+        return 2.0;
+      case "C-":
+        return 1.7;
+      case "D":
+        return 1.0;
+      case "F":
+        return 0.0;
+      default:
+        return NaN;
+    }
+  }
+</script>
+
+</body>
+</html>

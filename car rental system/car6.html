@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Payment Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style6.css">
+</head>
+<body>
+    <header>
+        <h1>Rental Payment Calculator</h1>
+    </header>
+
+    <section id="car-selection">
+        <h2>Choose a Car and Duration</h2>
+        <label for="car-select">Select a Car:</label>
+        <select id="car-select">
+            <option value="car1">Car Model 1</option>
+            <option value="car2">Car Model 2</option>
+            <option value="car3">Car Model 3</option>
+        </select>
+
+        <label for="duration">Duration (in days):</label>
+        <input type="number" id="duration" min="1" value="1">
+
+        <button id="calculate-button">Calculate</button>
+    </section>
+
+    <section id="payment-result">
+        <h2>Total Payment</h2>
+        <p id="total-payment">Please select a car and duration to calculate the payment.</p>
+       <a id="we" href="chackout.html">Pay Now</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        /* Player Selection Form Styling */
+        #playerSelect {
+            margin: 20px;
+        }
+
+        #playerSelect p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        #playerSelect label {
+            font-size: 16px;
+            margin-right: 20px;
+        }
+
+        /* Button Styling */
+        button[type="button"] {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #0074cc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Game Board Styling */
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 10px;
+            margin: 20px auto;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .cell:hover {
+            background-color: #d9d9d9;
+        }
+
+        .cell.disabled {
+            pointer-events: none;
+        }
+
+        /* Message and Restart Button Styling */
+        #message {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        #restart {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <form id="playerSelect">
+        <p>Select opponent:</p>
+        <label>
+            <input type="radio" name="opponent" value="player" checked> Player
+        </label>
+        <label>
+            <input type="radio" name="opponent" value="computer"> Computer
+        </label>
+        <button type="button" id="startGame"><a href="index2.html">start game</a></button>
+    </form>
+    <div class="board" id="board">
+        <!-- The game board will be appended here -->
+    </div>
+    <p id="message"></p>
+    <button id="restart"><a href="index.html">Restart</a></button>
+</body>
+</html>
